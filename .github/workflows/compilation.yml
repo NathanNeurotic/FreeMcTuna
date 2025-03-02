@@ -21,17 +21,21 @@ jobs:
       - name: Compile
         run: |
           make
-
       - name: Get short SHA
         id: slug
-        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+        run: echo "sha8=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
 
+      # (Optional) Keep artifact upload if needed separately
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: OpenTuna_Installer_${{ steps.slug.outputs.sha8 }}
+          name: OpenTuna_Installer_${{ env.sha8 }}
           path: OpenTuna_Installer.elf
+
+      # Ensure release step can find the ELF file
+      - name: Debug - Check ELF file exists
+        run: ls -lah OpenTuna_Installer.elf
 
       - name: Create release
         if: github.ref == 'refs/heads/Free-McTuna-OpenTuna-Installer-AIO'
@@ -40,4 +44,4 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "FreeMcTunaAIO"
           title: "Free McTuna: OpenTuna Installer w/PS2BBL - AIO (Recommended)"
-          files: Opentuna_Installer.elf
+          files: OpenTuna_Installer.elf
