@@ -30,8 +30,8 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: FMCT_INSTALLER_${{ steps.slug.outputs.sha8 }}
-          path: FMCT_INSTALLER.ELF
+          name: OpenTuna_Installer_${{ steps.slug.outputs.sha8 }}
+          path: OpenTuna_Installer.elf
 
       - name: Create release
         if: github.ref == 'refs/heads/FreeMcTuna'
