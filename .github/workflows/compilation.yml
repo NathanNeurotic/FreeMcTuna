@@ -39,5 +39,5 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "FreeMcTunaAIO"
-          title: "Free McTuna: OpenTuna Installer - AIO (Recommended)"
+          title: "Free McTuna: OpenTuna Installer w/PS2BBL - AIO (Recommended)"
           files: Opentuna_Installer.elf
