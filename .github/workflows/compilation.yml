@@ -38,6 +38,6 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "Free-McTuna-OpenTuna-Installer-AIO"
+          automatic_release_tag: "FreeMcTunaAIO"
           title: "Free McTuna: OpenTuna Installer - AIO (Recommended)"
-          files: FMCT-INSTALLER.ELF
+          files: OpenTuna_Installer.elf
