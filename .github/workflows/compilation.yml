@@ -40,4 +40,4 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "FreeMcTunaAIO"
           title: "Free McTuna: OpenTuna Installer - AIO (Recommended)"
-          files: OpenTuna_Installer.elf
+          files: FMCT-INSTALLER.ELF
