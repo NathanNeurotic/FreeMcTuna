@@ -30,14 +30,14 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: OpenTuna_Installer_${{ steps.slug.outputs.sha8 }}
-          path: OpenTuna_Installer.elf
+          name: FMCT_INSTALLER_${{ steps.slug.outputs.sha8 }}
+          path: FMCT_INSTALLER.ELF
 
       - name: Create release
-        if: github.ref == 'refs/heads/OpenTuna-FMCB-Installer'
+        if: github.ref == 'refs/heads/FreeMcTuna'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "FreeMCBootDecrypted"
-          title: "OpenTuna FMCB Installer - Recommended"
-          files: OpenTuna_Installer.elf
+          automatic_release_tag: "Free-McTuna-OpenTuna-Installer-AIO"
+          title: "Free McTuna: OpenTuna Installer - AIO (Recommended)"
+          files: FMCT-INSTALLER.ELF
