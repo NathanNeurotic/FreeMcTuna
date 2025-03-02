@@ -1,5 +1,5 @@
 EE_BIN = Installer.elf
-EE_BIN_PACKED = OpenTuna_Installer.elf
+EE_BIN_PACKED = FMCT-INSTALLER.ELF
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
 EE_OBJS += restartdel_icn.o restarticon_sys.o restartlist_icn.o restart_elf.o powerdel_icn.o powericon_sys.o powerlist_icn.o poweroff_elf.o fmcbdninesixcopy_icn.o fmcbdninesixdel_icn.o fmcbdninesix_icn.o fmcbdninesix_elf.o fmcbdninesixicon_sys.o fmcbdninefivecopy_icn.o fmcbdninefivedel_icn.o fmcbdninefive_icn.o fmcbdninefive_elf.o fmcbdninefiveicon_sys.o fmcbdeightcopy_icn.o fmcbdeightdel_icn.o fmcbdeight_icn.o fmcbdeight_elf.o fmcbdeighticon_sys.o apps_icn.o appsdel_icn.o appsicon_sys.o  \
