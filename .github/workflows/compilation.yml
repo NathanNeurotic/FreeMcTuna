@@ -34,10 +34,10 @@ jobs:
           path: OpenTuna_Installer.elf
 
       - name: Create release
-        if: github.ref == 'refs/heads/FreeMcTuna'
+        if: github.ref == 'refs/heads/Free-McTuna-OpenTuna-Installer-AIO'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "FreeMcTunaAIO"
           title: "Free McTuna: OpenTuna Installer - AIO (Recommended)"
-          files: FMCT-INSTALLER.ELF
+          files: Opentuna_Installer.elf
