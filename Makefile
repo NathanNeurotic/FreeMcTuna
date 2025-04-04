@@ -18,7 +18,6 @@ EE_SRC = restartdel_icn.s restarticon_sys.s restartlist_icn.s restart_elf.s powe
 	ldrfmcbdicon_sys.s ldrfmcbdfmcb_icn.s ldrfmcbddel_icn.s ldrfmcbdcopy_icn.s fmcbcfgcopy_icn.s fmcbcfgdel_icn.s fmcbcfgicon_sys.s \
 	fmcbcfglist_icn.s sysconffmcb_cfg_elf.s sysconffreemcb_cnf.s sysconfipconfig_dat.s sysconflaunchelf_cnf.s sysconfps2bbl_ini.s \
 	sysconfusbd_irx.s sysconfusbhdfsd_irx.s sysconfcopy_icn.s sysconfdel_icn.s sysconfendvdpl_irx.s sysconficon_sys.s sysconfsysconf_icn.s
-	   
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
