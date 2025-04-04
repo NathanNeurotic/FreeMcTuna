@@ -38,10 +38,10 @@ jobs:
         run: ls -lah FMCT-INSTALLER.ELF
 
       - name: Create release
-        if: github.ref == 'refs/heads/Free-McTuna-OpenTuna-Installer-AIO'
+        if: github.ref == 'refs/heads/UMCS-OpenTuna'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "FreeMcTunaAIO"
-          title: "Free McTuna: OpenTuna Installer w/PS2BBL - AIO (Recommended)"
+          automatic_release_tag: "UMCS-OpenTuna"
+          title: "UMCS: OpenTuna Installer w/PS2BBL - AIO (Recommended)"
           files: FMCT-INSTALLER.ELF
