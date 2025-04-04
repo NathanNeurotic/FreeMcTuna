@@ -2,17 +2,16 @@ EE_BIN = Installer.elf
 EE_BIN_PACKED = UMCS-OpenTuna.ELF
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
-EE_OBJS += restartdel_icn.o restarticon_sys.o restartlist_icn.o restart_elf.o powerdel_icn.o powericon_sys.o powerlist_icn.o poweroff_elf.o fmcbdninesixcopy_icn.o fmcbdninesixdel_icn.o fmcbdninesix_icn.o fmcbdninesix_elf.o fmcbdninesixicon_sys.o fmcbdninefivecopy_icn.o fmcbdninefivedel_icn.o fmcbdninefive_icn.o fmcbdninefive_elf.o fmcbdninefiveicon_sys.o fmcbdeightcopy_icn.o fmcbdeightdel_icn.o fmcbdeight_icn.o fmcbdeight_elf.o fmcbdeighticon_sys.o apps_icn.o appsdel_icn.o appsicon_sys.o  \
+EE_OBJS += powerdel_icn.o powericon_sys.o powerlist_icn.o poweroff_elf.o fmcbdninesixcopy_icn.o fmcbdninesixdel_icn.o fmcbdninesix_icn.o fmcbdninesix_elf.o fmcbdninesixicon_sys.o fmcbdninefivecopy_icn.o fmcbdninefivedel_icn.o fmcbdninefive_icn.o fmcbdninefive_elf.o fmcbdninefiveicon_sys.o\
 	title_cfg.o esr_elf.o fmcbd_elf.o boot2_elf.o boot_elf.o icon_sys.o copy_icn.o del_icn.o boot_icn.o config_ini.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o \
 	OpenTuna_FAT-110-120-150-160.o PADMAN_irx.o SIO2MAN_irx.o MCMAN_irx.o MCSERV_irx.o ldrfmcbdicon_sys.o ldrfmcbdfmcb_icn.o ldrfmcbddel_icn.o \
 	ldrfmcbdcopy_icn.o fmcbcfgcopy_icn.o fmcbcfgdel_icn.o fmcbcfgicon_sys.o fmcbcfglist_icn.o sysconffmcb_cfg_elf.o sysconffreemcb_cnf.o sysconfipconfig_dat.o \
 	sysconflaunchelf_cnf.o sysconfps2bbl_ini.o sysconfusbd_irx.o sysconfusbhdfsd_irx.o sysconfcopy_icn.o sysconfdel_icn.o sysconfendvdpl_irx.o sysconficon_sys.o \
 	sysconfsysconf_icn.o
-EE_SRC = restartdel_icn.s restarticon_sys.s restartlist_icn.s restart_elf.s powerdel_icn.s powericon_sys.s powerlist_icn.s poweroff_elf.s \
+EE_SRC = powerdel_icn.s powericon_sys.s powerlist_icn.s poweroff_elf.s \
 	fmcbdninesixcopy_icn.s fmcbdninesixdel_icn.s fmcbdninesix_icn.s fmcbdninesix_elf.s fmcbdninesixicon_sys.s \
 	fmcbdninefivecopy_icn.s fmcbdninefivedel_icn.s fmcbdninefive_icn.s fmcbdninefive_elf.s fmcbdninefiveicon_sys.s \
-	fmcbdeightcopy_icn.s fmcbdeightdel_icn.s fmcbdeight_icn.s fmcbdeight_elf.s fmcbdeighticon_sys.s \
-	apps_icn.s appsdel_icn.s appsicon_sys.s title_cfg.s esr_elf.s fmcbd_elf.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s \
+	title_cfg.s esr_elf.s fmcbd_elf.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s \
 	boot_icn.s config_ini.s OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s \
 	PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c \
 	ldrfmcbdicon_sys.s ldrfmcbdfmcb_icn.s ldrfmcbddel_icn.s ldrfmcbdcopy_icn.s fmcbcfgcopy_icn.s fmcbcfgdel_icn.s fmcbcfgicon_sys.s \
@@ -22,18 +21,6 @@ EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
 	$(MAKE) $(EE_BIN_PACKED)
-restartdel_icn.s:
-	bin2s INSTALL/RESTART/DEL.ICN restartdel_icn.s restartdel_icn
-
-restarticon_sys.s:
-	bin2s INSTALL/RESTART/ICON.SYS restarticon_sys.s restarticon_sys
-
-restartlist_icn.s:
-	bin2s INSTALL/RESTART/LIST.ICN restartlist_icn.s restartlist_icn
-
-restart_elf.s:
-	bin2s INSTALL/RESTART/RESTART.ELF restart_elf.s restart_elf
-
 powerdel_icn.s:
 	bin2s INSTALL/POWEROFF/DEL.ICN powerdel_icn.s powerdel_icn
 
@@ -75,30 +62,6 @@ fmcbdninefive_elf.s:
 
 fmcbdninefiveicon_sys.s:
 	bin2s INSTALL/FMCBD-1.953/ICON.SYS fmcbdninefiveicon_sys.s fmcbdninefiveicon_sys
-
-fmcbdeightcopy_icn.s:
-	bin2s INSTALL/FMCBD-1.8C/COPY.ICN fmcbdeightcopy_icn.s fmcbdeightcopy_icn
-
-fmcbdeightdel_icn.s:
-	bin2s INSTALL/FMCBD-1.8C/DEL.ICN fmcbdeightdel_icn.s fmcbdeightdel_icn
-
-fmcbdeight_icn.s:
-	bin2s INSTALL/FMCBD-1.8C/FMCB.ICN fmcbdeight_icn.s fmcbdeight_icn
-
-fmcbdeight_elf.s:
-	bin2s INSTALL/FMCBD-1.8C/FMCBD-1.8C.ELF fmcbdeight_elf.s fmcbdeight_elf
-
-fmcbdeighticon_sys.s:
-	bin2s INSTALL/FMCBD-1.8C/ICON.SYS fmcbdeighticon_sys.s fmcbdeighticon_sys
-
-apps_icn.s:
-	bin2s INSTALL/APPS/APPS.ICN apps_icn.s apps_icn
-
-appsdel_icn.s:
-	bin2s INSTALL/APPS/DEL.ICN appsdel_icn.s appsdel_icn
-
-appsicon_sys.s:
-	bin2s INSTALL/APPS/ICON.SYS appsicon_sys.s appsicon_sys
 
 ldrfmcbdcopy_icn.s:
 	bin2s INSTALL/FMCBD-1.966/COPY.ICN ldrfmcbdcopy_icn.s ldrfmcbdcopy_icn
