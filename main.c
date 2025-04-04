@@ -251,7 +251,7 @@ static int install(int mcport, int icon_variant)
 	}
 
 	//If there's no free space, we have an error:
-	if (mc_Free < 1727)
+	if (mc_Free < 200)
 	{
 		return 3;
 	}
@@ -266,6 +266,10 @@ static int install(int mcport, int icon_variant)
     sprintf(temp_path,"mc%u:FORTUNA", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:OPENTUNA", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:DST_OPENTUNA-INSTALLER", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:DST_FMCT-INSTALLER", mcport);
 		DeleteFolder(temp_path);
     
 	//If the files exists, we have an error:
