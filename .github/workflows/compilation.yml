@@ -30,12 +30,12 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: FMCT-INSTALLER_${{ env.sha8 }}
-          path: FMCT-INSTALLER.ELF
+          name: Installer_${{ env.sha8 }}
+          path: Installer.elf
 
       # Ensure release step can find the ELF file
       - name: Debug - Check ELF file exists
-        run: ls -lah FMCT-INSTALLER.ELF
+        run: ls -lah Installer.elf
 
       - name: Create release
         if: github.ref == 'refs/heads/UMCS-OpenTuna'
