@@ -1,94 +1,155 @@
+# ![FMCT](https://github.com/user-attachments/assets/528c5349-60e6-4792-a3fd-73b40698f31a)
 
-![FMCT](https://github.com/user-attachments/assets/528c5349-60e6-4792-a3fd-73b40698f31a)
-# Free McTuna - A OpenTuna Installer Mod
-OpenTuna has 3 variations dependent upon ROM versions, it is crucial to run the installer to ensure the proper OpenTuna is used on your console.
-1. FAT
-2. FAT170
-3. SLIMS
+# OpenTuna: UMCS Installer - An Enhanced OpenTuna Installer Mod
 
-***DO NOT LOAD A FAT TUNA ON A SLIM AND VICE VERSA. THIS MAY CAUSE CORRUPTION***
+The OpenTuna UMCS Installer is a complete installation utility designed to set up OpenTuna for use across a wide range of PlayStation 2 models, including support for specific ROM-dependent variations. This modified installer enhances compatibility, simplifies deployment, and includes safeguards to prevent corruption.
 
-**Can I install OpenTuna Slim ontop of my System Update Exploit so one card can work on every console?**
-Yes, but remember - do not load the memory card browser with the wrong tuna/rom combination. (Fat tuna on slim, etc.)
-It can only pose an issue when accessing the memory card browser of the PS2 while having the wrong tuna installed for that console.
+## Understanding the OpenTuna Variants
+OpenTuna has three critical variants based on ROM versions:
 
-**Can I add OpenTuna to my FMCB or PS2BBL installation?**
-* Yes, but it will change settings in your FREEMCB.CNF, CONFIG.INI, and PS2BBL.INI. You may also lose applications or other settings if they reside in the removed/overwritten folders by the installer. A better option for *adding tuna* to an existing FMCB/PS2BBL installation, would be to run the [OpenTuna-Standalone=Addon-Installer](https://github.com/NathanNeurotic/FreeMcTuna/releases/tag/OpenTunaStandAloneAddOn), which only installs `mc?:/OPENTUNA/icon.icn` and `mc?:/OPENTUNA/icon.sys` thus preserving any of your settings or applications. Keep in mind, OPENTUNA is hardset to boot `mc?:/BOOT/BOOT.ELF` - if there is nothing there, it will either freeze or take you back to the browser screen. Make sure you understand this before proceeding.
+1. **FAT** – For older PS2 consoles.
+2. **FAT170** – For specific later FAT consoles.
+3. **SLIMS** – For all Slim model consoles.
 
-**What is Free McTuna?**
-* Boots to FMCB Decrypted 1.966 via OpenTuna's PS2BBL (BOOT.ELF).
-* Can be reverted to 1.953 for modchips upon simply deleting 1.966 in the memory card browser.
-* Can be reverted further to 1.8C by additionally deleting 1.953 for rare modchip scenarios in the memory card browser.
-* Fully Applied BDMA for exFAT compatibility with FMCB
-* Many more customizable features and icons. (Like removing FMCB, changing CONFIG.INI to boot whatever you want instead from OpenTuna, etc.)
-* Should be compatible with modchips and pretty much anything after model SCPH-18000
-* If you need a place to start, check out [FreeDVDBoot](https://github.com/ps2homebrew/FreeDVDBoot), [PFS-BatchKit-Manager](https://github.com/GDX-X/PFS-BatchKit-Manager), [PS2HDH](https://www.psx-place.com/resources/ps2-hdd-decryption-helper.1507/), or [HDL-Batch-Installer](https://github.com/israpps/HDL-Batch-installer) for ways to get access to wLaunchELF to run the **Free McTuna Installer**.
-* You can also use devices like [PSXMC2](https://www.bitfunx.com/product/psxmemcard-gen2-memory-card-for-playstation1-ps-one-playstation2-game-consoles/), [SD2PSX](https://sd2psx.net/ps2-exploit.html), or [MCP2](https://qrco.de/bdiiDa) to download a memory card exploit vmc directly to their microSD card for access to wLaunchELF. Cards can be downloaded [here](https://www.psx-place.com/threads/mmce-memcard-pro2-sd2psx-psxmemcard-gen1-2-pmc-z-ready-to-use-memory-cards.46415/).
-* Once you're in wLaunchELF, you'll be able to access a the storage device dependant upon your setup.
-* Simply run the installer ELF - *be patient, the install is not quick.*
-* 4MiB Free Space on your Memory Card is recommended before running the installer.
----------------------------------
-Modified Original Readme to reflect additional folder deletion and recommended backup before proceeding.
-This modified OpenTuna-Installer will install the following folders and files to the selected memory card:
+> **WARNING**: *Do NOT use a FAT OpenTuna variant on a Slim console, and vice versa. Doing so can cause memory card data corruption.*
 
-- `BOOT/BOOT.ELF` as [PS2BBL](https://israpps.github.io/PlayStation2-Basic-BootLoader/)
-- `BOOT/BOOT2.ELF` as [wLaunchELF_isr-EXFAT from @israpps](https://israpps.github.io/projects/wlaunchelf-isr).
-- `FMCBD-1.966/FMCBD-1.966.ELF` as [FreeMCBoot 1.966 Decrypted](https://github.com/israpps/FreeMcBoot-Installer/tree/master/Decrypted_FreeMcBoot)
-- `FMCBD-1.966/FMCB.icn` as LDR_FMCBD-1.966 Folder Icon
-- `FMCBD-1.966/del.icn` as LDR_FMCBD-1.966 Folder Delete Icon
-- `FMCBD-1.966/copy.icn` as LDR_FMCBD-1.966 Folder Copy Icon
-- `FMCBD-1.966/icon.sys` as LDR_FMCBD-1.966 Folder Icon Data
-- `BOOT/CONFIG.INI` as BOOT.ELF's PS2BBL configuration
-- `BOOT/ESR.ELF` as [ESR Launcher for ESR Patched Discs](https://www.psx-place.com/resources/esr-launcher.1526/)
-- `BOOT/BOOT.icn` as BOOT Folder Icon
-- `BOOT/copy.icn` as BOOT Folder Copy Icon
-- `BOOT/del.icn` as BOOT Folder Delete Icon
-- `BOOT/icon.sys` as BOOT Folder Icon Data
-- `OPENTUNA/icon.icn` as [OpenTuna Exploit Icon (Invisible Icon displays as Corrupted Data - PART OF EXPLOIT - DO NOT DELETE)](https://www.psx-place.com/resources/fmcb-1-9-for-opentuna.1177/)
-- `OPENTUNA/icon.sys` as [OpenTuna Exploit Icon Data (PART OF EXPLOIT - DO NOT DELETE)](https://www.psx-place.com/resources/fmcb-1-9-for-opentuna.1177/)
-- `SYS_FMCB-CFG/FMCB-CFG.ELF` as [FreeMCBoot Configurator for FMCB and FMCBD](https://israpps.github.io/FreeMcBoot-Installer/test/8_Downloads.html)
-- `SYS_FMCB-CFG/list.icn` as SYS_FMCBCFG Folder Icon
-- `SYS_FMCB-CFG/copy.icn` as SYS_FMCBCFG Folder Copy Icon
-- `SYS_FMCB-CFG/del.icn` as SYS_FMCBCFG Folder Delete Icon
-- `SYS_FMCB-CFG/icon.sys` as SYS_FMCBCFG Folder Icon Data
-- `SYS_FMCB-CFG/title.cfg` as OPL Listing and other documentation data
-- `SYS-CONF/endvdpl.irx` FMCB Installation file
-- `SYS-CONF/copy.icn` as SYS-CONF Folder Copy Icon
-- `SYS-CONF/del.icn` as SYS-CONF Folder Delete Icon
-- `SYS-CONF/FREEMCB.CNF` as FMCB and FMCBD configuration
-- `SYS-CONF/icon.sys` as SYS-CONF Icon Data
-- `SYS-CONF/IPCONFIG.DAT` as default IP settings for many different applications.
-- `SYS-CONF/sysconf.icn` as SYS-CONF Folder Icon
-- `SYS-CONF/USBD.IRX` as [BDM Assault for exFAT USB compatibility on FMCB/D](https://github.com/israpps/BDMAssault)
-- `SYS-CONF/USBHDFSD.IRX` as [BDM Assault for exFAT USB compatibility on FMCB/D](https://github.com/israpps/BDMAssault)
+## Compatibility & Multi-System Cards
+**Can I install OpenTuna Slim on top of my System Update Exploit so one card works on every console?**  
+Yes. However, avoid opening the memory card browser with an incompatible combination (e.g., FAT variant on a Slim console). Only when the wrong ROM and tuna combination is accessed through the memory card browser is there a risk of corruption.
 
+## Integration with FMCB or PS2BBL
+**Can I add OpenTuna to my FMCB or PS2BBL installation?**  
+Yes, but be aware that it will modify `FREEMCB.CNF`, `CONFIG.INI`, and `PS2BBL.INI`, potentially removing apps or altering paths. 
 
-# OpenTuna installer
+For a safer approach, use the [OpenTuna Standalone Addon Installer](https://github.com/NathanNeurotic/FreeMcTuna/releases/tag/OpenTunaStandAloneAddOn), which only installs:
+- `mc?:/OPENTUNA/icon.icn`
+- `mc?:/OPENTUNA/icon.sys`
 
-This is the OpenTuna installer. This will install OpenTuna hacked icons on PS2 consoles with ROMs ranging from versions 1.10 to 2.30 (2.50?). This means OpenTuna is now compatible with Fat and Slim models from SCPH-18000 up to SCPH-90010 and PS2-TV.
+> **NOTE**: OpenTuna is hardcoded to boot `mc?:/BOOT/BOOT.ELF`. Ensure this file exists or the system may freeze or return to the PS2 browser.
 
-This installer will not remove System Update Exploits (FHDB, FMCB, PS2BBL) but it will reconfigure them to a unified FMCB experience across exploits and models.
-This means if you have applications mapped with those programs, you will need to re-add them to the CNF or INI respectively. (FreeMCBoot Configurator if you don't know what I'm referencing or text edit BOOT/CONFIG.INI with wLaunchELF's MISC/Text Editor to adjust BOOT.ELF's auto launch and launch keys.)
+## What is Free McTuna?
+Free McTuna is a full memory card exploit package utilizing OpenTuna to boot FreeMCBoot:
 
+- Boots FMCB 1.966 (decrypted) via OpenTuna's BOOT.ELF (PS2BBL)
+- Easily switchable to 1.953 or OSDMENU by deleting corresponding folders
+- Launch wLaunchELF by holding **START** on boot
+- Full BDMA support for exFAT compatibility
+- Highly customizable: redirect launch paths, replace icons, and integrate with modchips
+- Compatible with nearly all models SCPH-18000 and newer
 
-##### note:
+## Getting Started with Free McTuna
+If you're new, try:
+- [FreeDVDBoot](https://github.com/ps2homebrew/FreeDVDBoot)
+- [PFS-BatchKit-Manager](https://github.com/GDX-X/PFS-BatchKit-Manager)
+- [PS2HDH](https://www.psx-place.com/resources/ps2-hdd-decryption-helper.1507/)
+- [HDL-Batch-Installer](https://github.com/israpps/HDL-Batch-installer)
 
-the following folders will be deleted from the memory card during install to avoid issues, it is recommended to backup these folders if they exist incase you decide to revert to your previous setup. Remember when doing so, to `copy` the folder and `psupaste` it to your chosen storage device. To restore your backups, you would `psupaste` the `.psu` files from your storage device back to memory card. This shouldn't be necessary, but this is how you would do it.
+Or use ready-made memory cards with:
+- [PSXMC2](https://www.bitfunx.com/product/psxmemcard-gen2-memory-card-for-playstation1-ps-one-playstation2-game-consoles/)
+- [SD2PSX](https://sd2psx.net/ps2-exploit.html)
+- [MCP2](https://qrco.de/bdiiDa)
 
-- `BOOT`
-- `APPS`
-- `SYS-CONF`
-- `SYS_FMCBCFG`
-- `SYS_FMCB-CFG`
-- `FMCBD-1.966`
-- `FMCBD-1.953`
-- `FMCBD-1.8C`
-- `LDR_FMCBD-1.966`
-- `BXEXEC-FUNTUNA`
-- `FUNTUNA`
-- `BXEXEC-OPENTUNA`
-- `FORTUNA`
-- `OPENTUNA`
-- `FUNTUNA-FORK`
-- `RESTART`
-- `POWEROFF`
+Cards are downloadable [here](https://www.psx-place.com/threads/mmce-memcard-pro2-sd2psx-psxmemcard-gen1-2-pmc-z-ready-to-use-memory-cards.46415/).
+
+> Once in wLaunchELF, locate your storage device and run the installer ELF. Be patient — the installation may appear stalled but will eventually complete or throw an error. It will not freeze.
+
+**Minimum Recommended Free Space:** 6MiB  
+**Warning:** The installer *will* delete folders in its paths.
+
+---
+
+## Files Installed by This Installer (mc?:/)
+- `BOOT/BOOT.ELF` → `mc?:/BOOT/BOOT.ELF`
+- `BOOT/BOOT.icn` → `mc?:/BOOT/BOOT.icn`
+- `BOOT/BOOT2.ELF` → `mc?:/BOOT/BOOT2.ELF`
+- `BOOT/CONFIG.INI` → `mc?:/BOOT/CONFIG.INI`
+- `BOOT/ESR.ELF` → `mc?:/BOOT/ESR.ELF`
+- `BOOT/copy.icn` → `mc?:/BOOT/copy.icn`
+- `BOOT/del.icn` → `mc?:/BOOT/del.icn`
+- `BOOT/icon.sys` → `mc?:/BOOT/icon.sys`
+- `FMCBD-1.953/FMCB.icn` → `mc?:/FMCBD-1.953/FMCB.icn`
+- `FMCBD-1.953/FMCBD-1.953.ELF` → `mc?:/FMCBD-1.953/FMCBD-1.953.ELF`
+- `FMCBD-1.953/copy.icn` → `mc?:/FMCBD-1.953/copy.icn`
+- `FMCBD-1.953/del.icn` → `mc?:/FMCBD-1.953/del.icn`
+- `FMCBD-1.953/icon.sys` → `mc?:/FMCBD-1.953/icon.sys`
+- `FMCBD-1.966/FMCB.icn` → `mc?:/FMCBD-1.966/FMCB.icn`
+- `FMCBD-1.966/FMCBD-1.966.ELF` → `mc?:/FMCBD-1.966/FMCBD-1.966.ELF`
+- `FMCBD-1.966/copy.icn` → `mc?:/FMCBD-1.966/copy.icn`
+- `FMCBD-1.966/del.icn` → `mc?:/FMCBD-1.966/del.icn`
+- `FMCBD-1.966/icon.sys` → `mc?:/FMCBD-1.966/icon.sys`
+- `OPENTUNA/OpenTuna_FAT-110-120-150-160.psu` → `mc?:/OPENTUNA/OpenTuna_FAT-110-120-150-160.psu`
+- `OPENTUNA/OpenTuna_FAT-170.psu` → `mc?:/OPENTUNA/OpenTuna_FAT-170.psu`
+- `OPENTUNA/OpenTuna_Slims-190-200-220-230.psu` → `mc?:/OPENTUNA/OpenTuna_Slims-190-200-220-230.psu`
+- `OPENTUNA/README.md` → `mc?:/OPENTUNA/README.md`
+- `OSDMENU/OSDMENU.CNF` → `mc?:/OSDMENU/OSDMENU.CNF`
+- `OSDMENU/OSDMENU.ELF` → `mc?:/OSDMENU/OSDMENU.ELF`
+- `OSDMENU/copy.icn` → `mc?:/OSDMENU/copy.icn`
+- `OSDMENU/del.icn` → `mc?:/OSDMENU/del.icn`
+- `OSDMENU/icon.sys` → `mc?:/OSDMENU/icon.sys`
+- `OSDMENU/launcher.elf` → `mc?:/OSDMENU/launcher.elf`
+- `OSDMENU/list.icn` → `mc?:/OSDMENU/list.icn`
+- `OSDMENU/patcher.elf` → `mc?:/OSDMENU/patcher.elf`
+- `POPSTARTER/IPCONFIG.DAT` → `mc?:/POPSTARTER/IPCONFIG.DAT`
+- `POPSTARTER/SMBCONFIG.DAT` → `mc?:/POPSTARTER/SMBCONFIG.DAT`
+- `POPSTARTER/SMSUTILS.irx` → `mc?:/POPSTARTER/SMSUTILS.irx`
+- `POPSTARTER/del.icn` → `mc?:/POPSTARTER/del.icn`
+- `POPSTARTER/icon.sys` → `mc?:/POPSTARTER/icon.sys`
+- `POPSTARTER/list.icn` → `mc?:/POPSTARTER/list.icn`
+- `POPSTARTER/poweroff.irx` → `mc?:/POPSTARTER/poweroff.irx`
+- `POWEROFF/POWEROFF.ELF` → `mc?:/POWEROFF/POWEROFF.ELF`
+- `POWEROFF/copy.icn` → `mc?:/POWEROFF/copy.icn`
+- `POWEROFF/del.icn` → `mc?:/POWEROFF/del.icn`
+- `POWEROFF/icon.sys` → `mc?:/POWEROFF/icon.sys`
+- `POWEROFF/list.icn` → `mc?:/POWEROFF/list.icn`
+- `PS1_DKWDRV/DKWDRV.ELF` → `mc?:/PS1_DKWDRV/DKWDRV.ELF`
+- `PS1_DKWDRV/TITLE.CFG` → `mc?:/PS1_DKWDRV/TITLE.CFG`
+- `PS1_DKWDRV/copy.icn` → `mc?:/PS1_DKWDRV/copy.icn`
+- `PS1_DKWDRV/del.icn` → `mc?:/PS1_DKWDRV/del.icn`
+- `PS1_DKWDRV/icon.sys` → `mc?:/PS1_DKWDRV/icon.sys`
+- `PS1_DKWDRV/list.icn` → `mc?:/PS1_DKWDRV/list.icn`
+- `SYS-CONF/ENDVDPL.irx` → `mc?:/SYS-CONF/ENDVDPL.irx`
+- `SYS-CONF/FREEMCB.CNF` → `mc?:/SYS-CONF/FREEMCB.CNF`
+- `SYS-CONF/IPCONFIG.DAT` → `mc?:/SYS-CONF/IPCONFIG.DAT`
+- `SYS-CONF/USBD.IRX` → `mc?:/SYS-CONF/USBD.IRX`
+- `SYS-CONF/USBHDFSD.IRX` → `mc?:/SYS-CONF/USBHDFSD.IRX`
+- `SYS-CONF/copy.icn` → `mc?:/SYS-CONF/copy.icn`
+- `SYS-CONF/del.icn` → `mc?:/SYS-CONF/del.icn`
+- `SYS-CONF/icon.sys` → `mc?:/SYS-CONF/icon.sys`
+- `SYS-CONF/sysconf.icn` → `mc?:/SYS-CONF/sysconf.icn`
+- `SYS_FMCB-CFG/FMCB-CFG.ELF` → `mc?:/SYS_FMCB-CFG/FMCB-CFG.ELF`
+- `SYS_FMCB-CFG/title.cfg` → `mc?:/SYS_FMCB-CFG/title.cfg`
+- `SYS_FMCB-CFG/copy.icn` → `mc?:/SYS_FMCB-CFG/copy.icn`
+- `SYS_FMCB-CFG/del.icn` → `mc?:/SYS_FMCB-CFG/del.icn`
+- `SYS_FMCB-CFG/icon.sys` → `mc?:/SYS_FMCB-CFG/icon.sys`
+- `SYS_FMCB-CFG/list.icn` → `mc?:/SYS_FMCB-CFG/list.icn`
+
+---
+
+## Folder Deletion Notice
+During installation, the following folders are **automatically deleted** to ensure clean setup:
+
+```text
+BOOT
+SYS-CONF
+SYS_FMCBCFG
+SYS_FMCB-CFG
+FMCBD-1.966
+FMCBD-1.953
+FMCBD-1.8C
+LDR_FMCBD-1.966
+BXEXEC-FUNTUNA
+FUNTUNA
+BXEXEC-OPENTUNA
+FORTUNA
+OPENTUNA
+FUNTUNA-FORK
+RESTART
+POWEROFF
+```
+
+**Important:** Backup any folder you wish to keep by using `psuPaste` after copying them to your storage device via wLaunchELF. If you want to restore later, simply `psuPaste` them back to the memory card.
+
+---
+
+## Summary
+OpenTuna UMCS Installer is a reliable and universal way to deploy the correct version of OpenTuna based on your PS2 model. It integrates support for Free McBoot, advanced bootloaders, and icon systems, while offering safeguards and backup options for power users. Proceed cautiously, back up important data, and enjoy a smooth exploit installation experience.
