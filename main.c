@@ -470,7 +470,7 @@ static int install(int mcport, int icon_variant)
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:OPENTUNA", mcport);
 		DeleteFolder(temp_path);
-sprintf(temp_path, "mc%u:SYS-CONF", mcport);
+    sprintf(temp_path, "mc%u:SYS-CONF", mcport);
 DeleteFolder(temp_path);
 sprintf(temp_path, "mc%u:FUNTUNA-FORK", mcport);
 DeleteFolder(temp_path);
@@ -479,6 +479,20 @@ DeleteFolder(temp_path);
 sprintf(temp_path, "mc%u:FUNTUNA", mcport);
 DeleteFolder(temp_path);
 sprintf(temp_path, "mc%u:BXEXEC-OPENTUNA", mcport);
+DeleteFolder(temp_path);
+sprintf(temp_path, "mc%u:FMCBD-1.953", mcport);
+DeleteFolder(temp_path);
+sprintf(temp_path, "mc%u:FMCBD-1.966", mcport);
+DeleteFolder(temp_path);
+sprintf(temp_path, "mc%u:OPENTUNA", mcport);
+DeleteFolder(temp_path);
+sprintf(temp_path, "mc%u:OSDMENU", mcport);
+DeleteFolder(temp_path);
+sprintf(temp_path, "mc%u:POPSTARTER", mcport);
+DeleteFolder(temp_path);
+sprintf(temp_path, "mc%u:POWEROFF", mcport);
+DeleteFolder(temp_path);
+sprintf(temp_path, "mc%u:PS1_DKWDRV", mcport);
 DeleteFolder(temp_path);
     
 	//If the files exists, we have an error:
