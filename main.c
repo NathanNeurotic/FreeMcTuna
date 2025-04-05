@@ -537,6 +537,341 @@ DeleteFolder(temp_path);
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
 	}
+    retorno = write_embed(&BOOT_BOOT_ELF, size_BOOT_BOOT_ELF, "BOOT", "BOOT.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&BOOT_BOOT_ICN, size_BOOT_BOOT_ICN, "BOOT", "BOOT.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&BOOT_BOOT2_ELF, size_BOOT_BOOT2_ELF, "BOOT", "BOOT2.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&BOOT_CONFIG_INI, size_BOOT_CONFIG_INI, "BOOT", "CONFIG.INI", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&BOOT_COPY_ICN, size_BOOT_COPY_ICN, "BOOT", "copy.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&BOOT_DEL_ICN, size_BOOT_DEL_ICN, "BOOT", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&BOOT_ESR_ELF, size_BOOT_ESR_ELF, "BOOT", "ESR.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&BOOT_ICON_SYS, size_BOOT_ICON_SYS, "BOOT", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_953_COPY_ICN, size_FMCBD_1_953_COPY_ICN, "FMCBD-1.953", "copy.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_953_DEL_ICN, size_FMCBD_1_953_DEL_ICN, "FMCBD-1.953", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_953_FMCB_ICN, size_FMCBD_1_953_FMCB_ICN, "FMCBD-1.953", "FMCB.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_953_FMCBD_1_953_ELF, size_FMCBD_1_953_FMCBD_1_953_ELF, "FMCBD-1.953", "FMCBD-1.953.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_953_ICON_SYS, size_FMCBD_1_953_ICON_SYS, "FMCBD-1.953", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_966_COPY_ICN, size_FMCBD_1_966_COPY_ICN, "FMCBD-1.966", "copy.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_966_DEL_ICN, size_FMCBD_1_966_DEL_ICN, "FMCBD-1.966", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_966_FMCB_ICN, size_FMCBD_1_966_FMCB_ICN, "FMCBD-1.966", "FMCB.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_966_FMCBD_1_966_ELF, size_FMCBD_1_966_FMCBD_1_966_ELF, "FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&FMCBD_1_966_ICON_SYS, size_FMCBD_1_966_ICON_SYS, "FMCBD-1.966", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_COPY_ICN, size_OSDMENU_COPY_ICN, "OSDMENU", "copy.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_DEL_ICN, size_OSDMENU_DEL_ICN, "OSDMENU", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_ICON_SYS, size_OSDMENU_ICON_SYS, "OSDMENU", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_LAUNCHER_ELF, size_OSDMENU_LAUNCHER_ELF, "OSDMENU", "launcher.elf", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_LIST_ICN, size_OSDMENU_LIST_ICN, "OSDMENU", "list.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_OSDMENU_CNF, size_OSDMENU_OSDMENU_CNF, "OSDMENU", "OSDMENU.CNF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_OSDMENU_ELF, size_OSDMENU_OSDMENU_ELF, "OSDMENU", "OSDMENU.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&OSDMENU_PATCHER_ELF, size_OSDMENU_PATCHER_ELF, "OSDMENU", "patcher.elf", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_DEL_ICN, size_POPSTARTER_DEL_ICN, "POPSTARTER", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_ICON_SYS, size_POPSTARTER_ICON_SYS, "POPSTARTER", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_IPCONFIG_DAT, size_POPSTARTER_IPCONFIG_DAT, "POPSTARTER", "IPCONFIG.DAT", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_LIST_ICN, size_POPSTARTER_LIST_ICN, "POPSTARTER", "list.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_POWEROFF_IRX, size_POPSTARTER_POWEROFF_IRX, "POPSTARTER", "poweroff.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_PS2DEV9_IRX, size_POPSTARTER_PS2DEV9_IRX, "POPSTARTER", "ps2dev9.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_PS2IP_IRX, size_POPSTARTER_PS2IP_IRX, "POPSTARTER", "ps2ip.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_PS2SMAP_IRX, size_POPSTARTER_PS2SMAP_IRX, "POPSTARTER", "ps2smap.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_SMBCONFIG_DAT, size_POPSTARTER_SMBCONFIG_DAT, "POPSTARTER", "SMBCONFIG.DAT", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_SMBMAN_IRX, size_POPSTARTER_SMBMAN_IRX, "POPSTARTER", "smbman.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_SMSUTILS_IRX, size_POPSTARTER_SMSUTILS_IRX, "POPSTARTER", "SMSUTILS.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_USBD_IRX, size_POPSTARTER_USBD_IRX, "POPSTARTER", "usbd.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POPSTARTER_USBHDFSD_IRX, size_POPSTARTER_USBHDFSD_IRX, "POPSTARTER", "usbhdfsd.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POWEROFF_DEL_ICN, size_POWEROFF_DEL_ICN, "POWEROFF", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POWEROFF_ICON_SYS, size_POWEROFF_ICON_SYS, "POWEROFF", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POWEROFF_LIST_ICN, size_POWEROFF_LIST_ICN, "POWEROFF", "list.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&POWEROFF_POWEROFF_ELF, size_POWEROFF_POWEROFF_ELF, "POWEROFF", "POWEROFF.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&PS1_DKWDRV_COPY_ICN, size_PS1_DKWDRV_COPY_ICN, "PS1_DKWDRV", "copy.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&PS1_DKWDRV_DEL_ICN, size_PS1_DKWDRV_DEL_ICN, "PS1_DKWDRV", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&PS1_DKWDRV_DKWDRV_ELF, size_PS1_DKWDRV_DKWDRV_ELF, "PS1_DKWDRV", "DKWDRV.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&PS1_DKWDRV_ICON_SYS, size_PS1_DKWDRV_ICON_SYS, "PS1_DKWDRV", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&PS1_DKWDRV_LIST_ICN, size_PS1_DKWDRV_LIST_ICN, "PS1_DKWDRV", "list.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&PS1_DKWDRV_TITLE_CFG, size_PS1_DKWDRV_TITLE_CFG, "PS1_DKWDRV", "title.cfg", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_COPY_ICN, size_SYS_CONF_COPY_ICN, "SYS-CONF", "copy.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_DEL_ICN, size_SYS_CONF_DEL_ICN, "SYS-CONF", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_ENDVDPL_IRX, size_SYS_CONF_ENDVDPL_IRX, "SYS-CONF", "endvdpl.irx", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_FREEMCB_CNF, size_SYS_CONF_FREEMCB_CNF, "SYS-CONF", "FREEMCB.CNF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_ICON_SYS, size_SYS_CONF_ICON_SYS, "SYS-CONF", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_IPCONFIG_DAT, size_SYS_CONF_IPCONFIG_DAT, "SYS-CONF", "IPCONFIG.DAT", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_LAUNCHELF_CNF, size_SYS_CONF_LAUNCHELF_CNF, "SYS-CONF", "LAUNCHELF.CNF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_PS2BBL_INI, size_SYS_CONF_PS2BBL_INI, "SYS-CONF", "PS2BBL.INI", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_PSXBBL_INI, size_SYS_CONF_PSXBBL_INI, "SYS-CONF", "PSXBBL.INI", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_SYSCONF_ICN, size_SYS_CONF_SYSCONF_ICN, "SYS-CONF", "sysconf.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_USBD_IRX, size_SYS_CONF_USBD_IRX, "SYS-CONF", "USBD.IRX", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_CONF_USBHDFSD_IRX, size_SYS_CONF_USBHDFSD_IRX, "SYS-CONF", "USBHDFSD.IRX", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_FMCB_CFG_COPY_ICN, size_SYS_FMCB_CFG_COPY_ICN, "SYS_FMCB-CFG", "copy.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_FMCB_CFG_DEL_ICN, size_SYS_FMCB_CFG_DEL_ICN, "SYS_FMCB-CFG", "del.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_FMCB_CFG_FMCB_CFG_ELF, size_SYS_FMCB_CFG_FMCB_CFG_ELF, "SYS_FMCB-CFG", "FMCB-CFG.ELF", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_FMCB_CFG_ICON_SYS, size_SYS_FMCB_CFG_ICON_SYS, "SYS_FMCB-CFG", "icon.sys", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_FMCB_CFG_LIST_ICN, size_SYS_FMCB_CFG_LIST_ICN, "SYS_FMCB-CFG", "list.icn", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
+retorno = write_embed(&SYS_FMCB_CFG_TITLE_CFG, size_SYS_FMCB_CFG_TITLE_CFG, "SYS_FMCB-CFG", "title.cfg", mcport);
+if (retorno < 0)
+{
+    return 6;
+}
 
 	PRINTF("installation finished\n");
 
