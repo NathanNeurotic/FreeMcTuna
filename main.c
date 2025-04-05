@@ -506,8 +506,24 @@ DeleteFolder(temp_path);
 	}
 	ret = mcMkDir(mcport, 0, "OPENTUNA");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "SYS-CONF");
-	mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "BOOT");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "FMCBD-1.953");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "FMCBD-1.966");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "OSDMENU");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "POPSTARTER");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "POWEROFF");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "PS1_DKWDRV");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "SYS-CONF");
+mcSync(0, NULL, &ret);
+ret = mcMkDir(mcport, 0, "SYS_FMCB-CFG");
+mcSync(0, NULL, &ret);
 
 	retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
