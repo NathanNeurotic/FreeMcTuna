@@ -203,21 +203,6 @@ extern int size_fmcbdninefive_elf;
 extern u8 fmcbdninefiveicon_sys[];
 extern int size_fmcbdninefiveicon_sys;
 //----------------------------------------//
-extern u8 fmcbdeightcopy_icn[];
-extern int size_fmcbdeightcopy_icn;
-//----------------------------------------//
-extern u8 fmcbdeightdel_icn[];
-extern int size_fmcbdeightdel_icn;
-//----------------------------------------//
-extern u8 fmcbdeight_icn[];
-extern int size_fmcbdeight_icn;
-//----------------------------------------//
-extern u8 fmcbdeight_elf[];
-extern int size_fmcbdeight_elf;
-//----------------------------------------//
-extern u8 fmcbdeighticon_sys[];
-extern int size_fmcbdeighticon_sys;
-//----------------------------------------//
 
 // Embedded IOP drivers
 extern unsigned char SIO2MAN_irx[];
