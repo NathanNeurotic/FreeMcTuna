@@ -57,7 +57,210 @@ int GetIconType(unsigned long int ROMVERSION)
 
 	return icontype;
 }
-
+//----------------------------------------//
+extern u8 BOOT_BOOT_ELF[];
+extern int size_BOOT_BOOT_ELF;
+//----------------------------------------//
+extern u8 BOOT_BOOT_ICN[];
+extern int size_BOOT_BOOT_ICN;
+//----------------------------------------//
+extern u8 BOOT_BOOT2_ELF[];
+extern int size_BOOT_BOOT2_ELF;
+//----------------------------------------//
+extern u8 BOOT_CONFIG_INI[];
+extern int size_BOOT_CONFIG_INI;
+//----------------------------------------//
+extern u8 BOOT_COPY_ICN[];
+extern int size_BOOT_COPY_ICN;
+//----------------------------------------//
+extern u8 BOOT_DEL_ICN[];
+extern int size_BOOT_DEL_ICN;
+//----------------------------------------//
+extern u8 BOOT_ESR_ELF[];
+extern int size_BOOT_ESR_ELF;
+//----------------------------------------//
+extern u8 BOOT_ICON_SYS[];
+extern int size_BOOT_ICON_SYS;
+//----------------------------------------//
+extern u8 FMCBD_1_953_COPY_ICN[];
+extern int size_FMCBD_1_953_COPY_ICN;
+//----------------------------------------//
+extern u8 FMCBD_1_953_DEL_ICN[];
+extern int size_FMCBD_1_953_DEL_ICN;
+//----------------------------------------//
+extern u8 FMCBD_1_953_FMCB_ICN[];
+extern int size_FMCBD_1_953_FMCB_ICN;
+//----------------------------------------//
+extern u8 FMCBD_1_953_FMCBD_1_953_ELF[];
+extern int size_FMCBD_1_953_FMCBD_1_953_ELF;
+//----------------------------------------//
+extern u8 FMCBD_1_953_ICON_SYS[];
+extern int size_FMCBD_1_953_ICON_SYS;
+//----------------------------------------//
+extern u8 FMCBD_1_966_COPY_ICN[];
+extern int size_FMCBD_1_966_COPY_ICN;
+//----------------------------------------//
+extern u8 FMCBD_1_966_DEL_ICN[];
+extern int size_FMCBD_1_966_DEL_ICN;
+//----------------------------------------//
+extern u8 FMCBD_1_966_FMCB_ICN[];
+extern int size_FMCBD_1_966_FMCB_ICN;
+//----------------------------------------//
+extern u8 FMCBD_1_966_FMCBD_1_966_ELF[];
+extern int size_FMCBD_1_966_FMCBD_1_966_ELF;
+//----------------------------------------//
+extern u8 FMCBD_1_966_ICON_SYS[];
+extern int size_FMCBD_1_966_ICON_SYS;
+//----------------------------------------//
+extern u8 OPENTUNA_icon_sys[];
+extern int size_OPENTUNA_icon_sys;
+//----------------------------------------//
+extern u8 OSDMENU_COPY_ICN[];
+extern int size_OSDMENU_COPY_ICN;
+//----------------------------------------//
+extern u8 OSDMENU_DEL_ICN[];
+extern int size_OSDMENU_DEL_ICN;
+//----------------------------------------//
+extern u8 OSDMENU_ICON_SYS[];
+extern int size_OSDMENU_ICON_SYS;
+//----------------------------------------//
+extern u8 OSDMENU_LAUNCHER_ELF[];
+extern int size_OSDMENU_LAUNCHER_ELF;
+//----------------------------------------//
+extern u8 OSDMENU_LIST_ICN[];
+extern int size_OSDMENU_LIST_ICN;
+//----------------------------------------//
+extern u8 OSDMENU_OSDMENU_CNF[];
+extern int size_OSDMENU_OSDMENU_CNF;
+//----------------------------------------//
+extern u8 OSDMENU_OSDMENU_ELF[];
+extern int size_OSDMENU_OSDMENU_ELF;
+//----------------------------------------//
+extern u8 OSDMENU_PATCHER_ELF[];
+extern int size_OSDMENU_PATCHER_ELF;
+//----------------------------------------//
+extern u8 POPSTARTER_DEL_ICN[];
+extern int size_POPSTARTER_DEL_ICN;
+//----------------------------------------//
+extern u8 POPSTARTER_ICON_SYS[];
+extern int size_POPSTARTER_ICON_SYS;
+//----------------------------------------//
+extern u8 POPSTARTER_IPCONFIG_DAT[];
+extern int size_POPSTARTER_IPCONFIG_DAT;
+//----------------------------------------//
+extern u8 POPSTARTER_LIST_ICN[];
+extern int size_POPSTARTER_LIST_ICN;
+//----------------------------------------//
+extern u8 POPSTARTER_POWEROFF_IRX[];
+extern int size_POPSTARTER_POWEROFF_IRX;
+//----------------------------------------//
+extern u8 POPSTARTER_PS2DEV9_IRX[];
+extern int size_POPSTARTER_PS2DEV9_IRX;
+//----------------------------------------//
+extern u8 POPSTARTER_PS2IP_IRX[];
+extern int size_POPSTARTER_PS2IP_IRX;
+//----------------------------------------//
+extern u8 POPSTARTER_PS2SMAP_IRX[];
+extern int size_POPSTARTER_PS2SMAP_IRX;
+//----------------------------------------//
+extern u8 POPSTARTER_SMBCONFIG_DAT[];
+extern int size_POPSTARTER_SMBCONFIG_DAT;
+//----------------------------------------//
+extern u8 POPSTARTER_SMBMAN_IRX[];
+extern int size_POPSTARTER_SMBMAN_IRX;
+//----------------------------------------//
+extern u8 POPSTARTER_SMSUTILS_IRX[];
+extern int size_POPSTARTER_SMSUTILS_IRX;
+//----------------------------------------//
+extern u8 POPSTARTER_USBD_IRX[];
+extern int size_POPSTARTER_USBD_IRX;
+//----------------------------------------//
+extern u8 POPSTARTER_USBHDFSD_IRX[];
+extern int size_POPSTARTER_USBHDFSD_IRX;
+//----------------------------------------//
+extern u8 POWEROFF_DEL_ICN[];
+extern int size_POWEROFF_DEL_ICN;
+//----------------------------------------//
+extern u8 POWEROFF_ICON_SYS[];
+extern int size_POWEROFF_ICON_SYS;
+//----------------------------------------//
+extern u8 POWEROFF_LIST_ICN[];
+extern int size_POWEROFF_LIST_ICN;
+//----------------------------------------//
+extern u8 POWEROFF_POWEROFF_ELF[];
+extern int size_POWEROFF_POWEROFF_ELF;
+//----------------------------------------//
+extern u8 PS1_DKWDRV_COPY_ICN[];
+extern int size_PS1_DKWDRV_COPY_ICN;
+//----------------------------------------//
+extern u8 PS1_DKWDRV_DEL_ICN[];
+extern int size_PS1_DKWDRV_DEL_ICN;
+//----------------------------------------//
+extern u8 PS1_DKWDRV_DKWDRV_ELF[];
+extern int size_PS1_DKWDRV_DKWDRV_ELF;
+//----------------------------------------//
+extern u8 PS1_DKWDRV_ICON_SYS[];
+extern int size_PS1_DKWDRV_ICON_SYS;
+//----------------------------------------//
+extern u8 PS1_DKWDRV_LIST_ICN[];
+extern int size_PS1_DKWDRV_LIST_ICN;
+//----------------------------------------//
+extern u8 PS1_DKWDRV_TITLE_CFG[];
+extern int size_PS1_DKWDRV_TITLE_CFG;
+//----------------------------------------//
+extern u8 SYS_CONF_COPY_ICN[];
+extern int size_SYS_CONF_COPY_ICN;
+//----------------------------------------//
+extern u8 SYS_CONF_DEL_ICN[];
+extern int size_SYS_CONF_DEL_ICN;
+//----------------------------------------//
+extern u8 SYS_CONF_ENDVDPL_IRX[];
+extern int size_SYS_CONF_ENDVDPL_IRX;
+//----------------------------------------//
+extern u8 SYS_CONF_FREEMCB_CNF[];
+extern int size_SYS_CONF_FREEMCB_CNF;
+//----------------------------------------//
+extern u8 SYS_CONF_ICON_SYS[];
+extern int size_SYS_CONF_ICON_SYS;
+//----------------------------------------//
+extern u8 SYS_CONF_IPCONFIG_DAT[];
+extern int size_SYS_CONF_IPCONFIG_DAT;
+//----------------------------------------//
+extern u8 SYS_CONF_LAUNCHELF_CNF[];
+extern int size_SYS_CONF_LAUNCHELF_CNF;
+//----------------------------------------//
+extern u8 SYS_CONF_PS2BBL_INI[];
+extern int size_SYS_CONF_PS2BBL_INI;
+//----------------------------------------//
+extern u8 SYS_CONF_PSXBBL_INI[];
+extern int size_SYS_CONF_PSXBBL_INI;
+//----------------------------------------//
+extern u8 SYS_CONF_SYSCONF_ICN[];
+extern int size_SYS_CONF_SYSCONF_ICN;
+//----------------------------------------//
+extern u8 SYS_CONF_USBD_IRX[];
+extern int size_SYS_CONF_USBD_IRX;
+//----------------------------------------//
+extern u8 SYS_CONF_USBHDFSD_IRX[];
+extern int size_SYS_CONF_USBHDFSD_IRX;
+//----------------------------------------//
+extern u8 SYS_FMCB_CFG_COPY_ICN[];
+extern int size_SYS_FMCB_CFG_COPY_ICN;
+//----------------------------------------//
+extern u8 SYS_FMCB_CFG_DEL_ICN[];
+extern int size_SYS_FMCB_CFG_DEL_ICN;
+//----------------------------------------//
+extern u8 SYS_FMCB_CFG_FMCB_CFG_ELF[];
+extern int size_SYS_FMCB_CFG_FMCB_CFG_ELF;
+//----------------------------------------//
+extern u8 SYS_FMCB_CFG_ICON_SYS[];
+extern int size_SYS_FMCB_CFG_ICON_SYS;
+//----------------------------------------//
+extern u8 SYS_FMCB_CFG_LIST_ICN[];
+extern int size_SYS_FMCB_CFG_LIST_ICN;
+//----------------------------------------//
+extern u8 SYS_FMCB_CFG_TITLE_CFG[];
+extern int size_SYS_FMCB_CFG_TITLE_CFG;
 //----------------------------------------//
 extern u8 opentuna_slims[];
 extern int size_opentuna_slims;
