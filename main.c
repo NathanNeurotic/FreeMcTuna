@@ -645,11 +645,6 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-        retorno = write_embed(&restartdel_icn, size_restartdel_icn, "RESTART", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
         retorno = write_embed(&powerdel_icn, size_powerdel_icn, "POWEROFF", "del.icn", mcport);
     if (retorno < 0)
     {
