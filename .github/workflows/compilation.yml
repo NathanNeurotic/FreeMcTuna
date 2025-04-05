@@ -27,13 +27,16 @@ jobs:
 
       - name: Get short SHA
         id: slug
-        run: echo "sha8=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
-
-      - name: Rename final ELF with tag
-        run: mv Installer.elf UMCS-OPENTUNA-${{ env.sha8 }}.ELF
-
-      - name: Zip the ELF with README and CHANGELOG
         run: |
+          echo "sha8=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
+
+      - name: Rename and move ELF to workspace
+        run: |
+          mv Installer.elf "$GITHUB_WORKSPACE/UMCS-OPENTUNA-${{ env.sha8 }}.ELF"
+
+      - name: Zip ELF with README and CHANGELOG into workspace
+        run: |
+          cd "$GITHUB_WORKSPACE"
           zip UMCS-OPENTUNA-${{ env.sha8 }}.zip \
             UMCS-OPENTUNA-${{ env.sha8 }}.ELF \
             README.md \
@@ -49,7 +52,8 @@ jobs:
             UMCS-OPENTUNA-${{ env.sha8 }}.zip
 
       - name: Debug - Check output files
-        run: ls -lah UMCS-OPENTUNA-${{ env.sha8 }}.*
+        run: |
+          ls -lah "$GITHUB_WORKSPACE"/UMCS-OPENTUNA-${{ env.sha8 }}.*
 
       - name: Create release
         if: github.ref == 'refs/heads/UMCS-OpenTuna'
