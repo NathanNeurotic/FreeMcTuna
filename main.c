@@ -464,11 +464,7 @@ DeleteFolder(temp_path);
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "SYS_FMCB-CFG");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "APPS");
-	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "POWEROFF");
-	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "RESTART");
 	mcSync(0, NULL, &ret);
 	retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
@@ -654,22 +650,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&restarticon_sys, size_restarticon_sys, "RESTART", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&restartlist_icn, size_restartlist_icn, "RESTART", "list.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&restart_elf, size_restart_elf, "RESTART", "RESTART.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&powerdel_icn, size_powerdel_icn, "POWEROFF", "del.icn", mcport);
+        retorno = write_embed(&powerdel_icn, size_powerdel_icn, "POWEROFF", "del.icn", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -740,21 +721,6 @@ DeleteFolder(temp_path);
         return 6;
     }
     retorno = write_embed(&fmcbdeighticon_sys, size_fmcbdeighticon_sys, "FMCBD-1.8C", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&apps_icn, size_apps_icn, "APPS", "APPS.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&appsdel_icn, size_appsdel_icn, "APPS", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&appsicon_sys, size_appsicon_sys, "APPS", "icon.sys", mcport);
     if (retorno < 0)
     {
         return 6;
