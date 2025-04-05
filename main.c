@@ -680,31 +680,6 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&fmcbdeightcopy_icn, size_fmcbdeightcopy_icn, "FMCBD-1.8C", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeightdel_icn, size_fmcbdeightdel_icn, "FMCBD-1.8C", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeight_icn, size_fmcbdeight_icn, "FMCBD-1.8C", "FMCB.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeight_elf, size_fmcbdeight_elf, "FMCBD-1.8C", "FMCBD-1.8C.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeighticon_sys, size_fmcbdeighticon_sys, "FMCBD-1.8C", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
 
 
 	PRINTF("installation finished\n");
