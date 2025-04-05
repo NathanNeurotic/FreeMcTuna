@@ -15,33 +15,49 @@ jobs:
       - name: Install dependencies
         run: |
           apk add build-base git zip
+
       - uses: actions/checkout@v3
+
       - run: |
           git fetch --prune --unshallow
+
       - name: Compile
         run: |
           make
+
       - name: Get short SHA
         id: slug
         run: echo "sha8=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
 
-      # (Optional) Keep artifact upload if needed separately
+      - name: Rename final ELF with tag
+        run: mv Installer.elf UMCS-OPENTUNA-${{ env.sha8 }}.ELF
+
+      - name: Zip the ELF with README and CHANGELOG
+        run: |
+          zip UMCS-OPENTUNA-${{ env.sha8 }}.zip \
+            UMCS-OPENTUNA-${{ env.sha8 }}.ELF \
+            README.md \
+            CHANGELOG.md
+
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: Installer_${{ env.sha8 }}
-          path: Installer.elf
+          name: UMCS-OPENTUNA-${{ env.sha8 }}
+          path: |
+            UMCS-OPENTUNA-${{ env.sha8 }}.ELF
+            UMCS-OPENTUNA-${{ env.sha8 }}.zip
 
-      # Ensure release step can find the ELF file
-      - name: Debug - Check ELF file exists
-        run: ls -lah Installer.elf
+      - name: Debug - Check output files
+        run: ls -lah UMCS-OPENTUNA-${{ env.sha8 }}.*
 
       - name: Create release
         if: github.ref == 'refs/heads/UMCS-OpenTuna'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "UMCS-OpenTuna"
-          title: "UMCS: OpenTuna Installer w/PS2BBL - AIO (Recommended)"
-          files: FMCT-INSTALLER.ELF
+          automatic_release_tag: "UMCS-OPENTUNA-${{ env.sha8 }}"
+          title: "UMCS: OpenTuna Installer w/PS2BBL - AIO (build ${{ env.sha8 }})"
+          files: |
+            UMCS-OPENTUNA-${{ env.sha8 }}.ELF
+            UMCS-OPENTUNA-${{ env.sha8 }}.zip
