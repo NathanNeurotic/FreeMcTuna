@@ -161,18 +161,6 @@ extern int size_fmcbcfgicon_sys;
 extern u8 fmcbcfglist_icn[];
 extern int size_fmcbcfglist_icn;
 //----------------------------------------//
-extern u8 restartdel_icn[];
-extern int size_restartdel_icn;
-//----------------------------------------//
-extern u8 restarticon_sys[];
-extern int size_restarticon_sys;
-//----------------------------------------//
-extern u8 restartlist_icn[];
-extern int size_restartlist_icn;
-//----------------------------------------//
-extern u8 restart_elf[];
-extern int size_restart_elf;
-//----------------------------------------//
 extern u8 powerdel_icn[];
 extern int size_powerdel_icn;
 //----------------------------------------//
@@ -229,15 +217,6 @@ extern int size_fmcbdeight_elf;
 //----------------------------------------//
 extern u8 fmcbdeighticon_sys[];
 extern int size_fmcbdeighticon_sys;
-//----------------------------------------//
-extern u8 apps_icn[];
-extern int size_apps_icn;
-//----------------------------------------//
-extern u8 appsdel_icn[];
-extern int size_appsdel_icn;
-//----------------------------------------//
-extern u8 appsicon_sys[];
-extern int size_appsicon_sys;
 //----------------------------------------//
 
 // Embedded IOP drivers
