@@ -55,7 +55,7 @@ jobs:
         run: |
           ls -lah "$GITHUB_WORKSPACE"/OSDMENU-OPENTUNA-${{ env.sha8 }}.*
 
-     - name: Create release
+      - name: Create release
         if: github.ref == 'refs/heads/OSDMenu'
         uses: marvinpinto/action-automatic-releases@latest
         with:
