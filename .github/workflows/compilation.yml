@@ -16,7 +16,7 @@ jobs:
         run: |
           apk add build-base git zip
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: |
           git fetch --prune --unshallow
@@ -55,13 +55,13 @@ jobs:
         run: |
           ls -lah "$GITHUB_WORKSPACE"/OSDMENU-OPENTUNA-${{ env.sha8 }}.*
 
-#     - name: Create release
-#        if: github.ref == 'refs/heads/OSDMenu'
-#        uses: marvinpinto/action-automatic-releases@latest
-#        with:
-#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-#          automatic_release_tag: "OSDMenu-${{ env.sha8 }}"
-#          title: "OSDMenu: OpenTuna Installer (build ${{ env.sha8 }})"
-#          files: |
-#            OSDMENU-OPENTUNA-${{ env.sha8 }}.ELF
-#            OSDMENU-OPENTUNA-${{ env.sha8 }}.zip
+     - name: Create release
+        if: github.ref == 'refs/heads/OSDMenu'
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "OSDMenu-${{ env.sha8 }}"
+          title: "OSDMenu: OpenTuna Installer (build ${{ env.sha8 }})"
+          files: |
+            OSDMENU-OPENTUNA-${{ env.sha8 }}.ELF
+            OSDMENU-OPENTUNA-${{ env.sha8 }}.zip
