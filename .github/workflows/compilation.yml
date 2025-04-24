@@ -32,13 +32,13 @@ jobs:
 
       - name: Rename and move ELF to workspace
         run: |
-          mv Installer.elf "$GITHUB_WORKSPACE/UMCS-OPENTUNA-${{ env.sha8 }}.ELF"
+          mv Installer.elf "$GITHUB_WORKSPACE/OSDMENU-OPENTUNA-${{ env.sha8 }}.ELF"
 
       - name: Zip ELF with README and CHANGELOG into workspace
         run: |
           cd "$GITHUB_WORKSPACE"
-          zip UMCS-OPENTUNA-${{ env.sha8 }}.zip \
-            UMCS-OPENTUNA-${{ env.sha8 }}.ELF \
+          zip OSDMENU-OPENTUNA-${{ env.sha8 }}.zip \
+            OSDMENU-OPENTUNA-${{ env.sha8 }}.ELF \
             README.md \
             CHANGELOG.md
 
@@ -46,22 +46,22 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: UMCS-OPENTUNA-${{ env.sha8 }}
+          name: OSDMENU-OPENTUNA-${{ env.sha8 }}
           path: |
-            UMCS-OPENTUNA-${{ env.sha8 }}.ELF
-            UMCS-OPENTUNA-${{ env.sha8 }}.zip
+            OSDMENU-OPENTUNA-${{ env.sha8 }}.ELF
+            OSDMENU-OPENTUNA-${{ env.sha8 }}.zip
 
       - name: Debug - Check output files
         run: |
-          ls -lah "$GITHUB_WORKSPACE"/UMCS-OPENTUNA-${{ env.sha8 }}.*
+          ls -lah "$GITHUB_WORKSPACE"/OSDMENU-OPENTUNA-${{ env.sha8 }}.*
 
-      - name: Create release
-        if: github.ref == 'refs/heads/UMCS-OpenTuna'
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "UMCS-OPENTUNA-${{ env.sha8 }}"
-          title: "UMCS: OpenTuna Installer w/PS2BBL - AIO (build ${{ env.sha8 }})"
-          files: |
-            UMCS-OPENTUNA-${{ env.sha8 }}.ELF
-            UMCS-OPENTUNA-${{ env.sha8 }}.zip
+#     - name: Create release
+#        if: github.ref == 'refs/heads/OSDMenu'
+#        uses: marvinpinto/action-automatic-releases@latest
+#        with:
+#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#          automatic_release_tag: "OSDMenu-${{ env.sha8 }}"
+#          title: "OSDMenu: OpenTuna Installer (build ${{ env.sha8 }})"
+#          files: |
+#            OSDMENU-OPENTUNA-${{ env.sha8 }}.ELF
+#            OSDMENU-OPENTUNA-${{ env.sha8 }}.zip
