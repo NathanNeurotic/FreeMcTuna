@@ -1087,16 +1087,14 @@ void error_message(int iz)
 	// This means iz=5,7,8 currently won't show a specific message here beyond the generic 'error' BMP.
 	default:
 		// No specific message for this error code, generic error BMP is already shown.
-		// We will print the numerical code below.
+		// Numerical error code printing removed to avoid gs_font_print undefined reference.
 		break;
 	}
 
-	// Display the numerical error code
-	char err_code_str[32];
-	sprintf(err_code_str, "Error Code: %d", iz);
-	// Y chosen to be below the typical MensajeX bitmaps.
-	// X chosen to be roughly centered for "Error Code: XX" (approx 14 chars, 8px/char ~112px; (640-112)/2 = 264)
-	gs_font_print(264, 390, 1, 0x00E0E0E0, err_code_str);
+	// Numerical error code display removed due to linker errors with gs_font_print.
+	// char err_code_str[32];
+	// sprintf(err_code_str, "Error Code: %d", iz);
+	// gs_font_print(264, 390, 1, 0x00E0E0E0, err_code_str);
 }
 
 // Waits for a specific controller key press (or any key if 'key' is -1).
@@ -1129,7 +1127,7 @@ int main(int argc, char *argv[])
 	int fdn, icontype;
 	unsigned long int ROM_VERSION = 0x170;
 	VMode = NTSC; // Default video mode
-	int mcport, state; // mcport: selected memory card slot; state: current state of the application
+	int mcport = 0, state; // mcport: selected memory card slot; state: current state of the application
 	int key; // Stores controller input
 
 	// Initialize PS2 hardware and basic services (IOP, SIF, FileIO, MC, PAD)
