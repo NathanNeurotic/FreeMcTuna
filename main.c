@@ -478,13 +478,14 @@ static int install(int mcport, int icon_variant)
     // For extreme robustness, a check could be added. For now, assume it's fine for this specific path.
 
 	mcGetInfo(mcport, 0, &mc_Type, &mc_Free, &mc_Format);
-	mcSync(0, NULL, &ret);
-	PRINTF("mc_Type: %d\n", mc_Type);
+	mcSync(0, NULL, &ret); // 'ret' will contain the result of the mcGetInfo operation
+	PRINTF("mc_Type: %d, mc_Free: %d, mc_Format: %d, mcGetInfo_ret: %d\n", mc_Type, mc_Free, mc_Format, ret); // Enhanced PRINTF
 
-	//If there's no MC, we have an error:
-	if (ret != -1)
+	// Check if mcGetInfo failed (0 means success for mcSync result from mc commands)
+	if (ret != 0)
 	{
-		return 1;
+		PRINTF("Install: mcGetInfo failed or reported an error. mcSync ret: %d\n", ret);
+		return 1; // Return error code 1 (generalized MC error)
 	}
 
 	//If it is not a PS2 MC, we have an error:
