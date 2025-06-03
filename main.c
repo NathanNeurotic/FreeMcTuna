@@ -120,8 +120,8 @@ extern u8 FMCBD_1_966_ICON_SYS[];
 extern int size_FMCBD_1_966_ICON_SYS;
 //----------------------------------------//
 // INSTALL/OPENTUNA/ directory files (specific OpenTuna exploit icons)
-extern u8 OPENTUNA_icon_sys[]; // General icon.sys for OpenTuna folder
-extern int size_OPENTUNA_icon_sys;
+extern u8 opentuna_sys[]; // General icon.sys for OpenTuna folder, matches bin2s symbol name
+extern int size_opentuna_sys; // Size of opentuna_sys data
 extern u8 opentuna_slims[]; // Icon for Slim PS2 models
 extern int size_opentuna_slims;
 extern u8 opentuna_fats[];  // Icon for common Fat PS2 models
