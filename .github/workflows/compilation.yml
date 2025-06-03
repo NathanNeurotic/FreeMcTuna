@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     container: ps2dev/ps2dev:v1.2.0
     steps:
+      # Install necessary dependencies in the Alpine-based container.
+      # build-base for make/compiler, git for checkout actions and SHA, zip for packaging.
       - name: Install dependencies
         run: |
           apk add build-base git zip
@@ -25,22 +27,27 @@ jobs:
         run: |
           make
 
+      # Generate a short 8-character SHA to use as a unique build identifier in filenames/tags.
       - name: Get short SHA
         id: slug
         run: |
           echo "sha8=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
 
+      # Rename the compiled ELF to a standardized name including the short SHA and move to workspace root.
       - name: Rename and move ELF to workspace
         run: |
           mv Installer.elf "$GITHUB_WORKSPACE/UMCS-OPENTUNA-${{ env.sha8 }}.ELF"
 
-      - name: Zip ELF with README and CHANGELOG into workspace
+      # Zip the ELF with the README.
+      # CHANGELOG.md was removed as it's not consistently present.
+      - name: Zip ELF with README into workspace
         run: |
           cd "$GITHUB_WORKSPACE"
+          # CHANGELOG.md was removed from the zip command below because it's not consistently present
+          # in the repository and caused zip errors. If it's added later, it can be re-included.
           zip UMCS-OPENTUNA-${{ env.sha8 }}.zip \
             UMCS-OPENTUNA-${{ env.sha8 }}.ELF \
-            README.md \
-            CHANGELOG.md
+            README.md
 
       - name: Upload artifacts
         if: ${{ success() }}
@@ -55,13 +62,15 @@ jobs:
         run: |
           ls -lah "$GITHUB_WORKSPACE"/UMCS-OPENTUNA-${{ env.sha8 }}.*
 
+      # Create a new GitHub Release only when a push is made to the 'UMCS-OpenTuna' branch.
       - name: Create release
         if: github.ref == 'refs/heads/UMCS-OpenTuna'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "UMCS-OPENTUNA-${{ env.sha8 }}"
-          title: "UMCS: OpenTuna Installer w/PS2BBL - AIO (build ${{ env.sha8 }})"
+          # Release title modified to include attribution/prefix "Jules - ".
+          title: "Jules - UMCS: OpenTuna Installer w/PS2BBL - AIO (build ${{ env.sha8 }})"
           files: |
             UMCS-OPENTUNA-${{ env.sha8 }}.ELF
             UMCS-OPENTUNA-${{ env.sha8 }}.zip
