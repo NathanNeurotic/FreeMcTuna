@@ -498,41 +498,41 @@ static int install(int mcport, int icon_variant)
 	{
 		return 3;
 	}
-   sprintf(temp_path,"mc%u:BOOT", mcport);
+   snprintf(temp_path, MAX_PATH, "mc%u:BOOT", mcport);
 	   if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-   sprintf(temp_path,"mc%u:LDR_FMCBD-1.966", mcport);
+   snprintf(temp_path, MAX_PATH, "mc%u:LDR_FMCBD-1.966", mcport);
 	   if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-   sprintf(temp_path,"mc%u:SYS_FMCBCFG", mcport);
+   snprintf(temp_path, MAX_PATH, "mc%u:SYS_FMCBCFG", mcport);
 	   if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-   sprintf(temp_path,"mc%u:SYS_FMCB-CFG", mcport);
+   snprintf(temp_path, MAX_PATH, "mc%u:SYS_FMCB-CFG", mcport);
 	   if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-    sprintf(temp_path,"mc%u:FORTUNA", mcport);
+    snprintf(temp_path, MAX_PATH, "mc%u:FORTUNA", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-	sprintf(temp_path,"mc%u:OPENTUNA", mcport); // This one is repeated later, ensure it's intended.
+	snprintf(temp_path, MAX_PATH, "mc%u:OPENTUNA", mcport); // This one is repeated later, ensure it's intended.
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-    sprintf(temp_path, "mc%u:SYS-CONF", mcport);
+    snprintf(temp_path, MAX_PATH, "mc%u:SYS-CONF", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:FUNTUNA-FORK", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:FUNTUNA-FORK", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:BXEXEC-FUNTUNA", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:BXEXEC-FUNTUNA", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:FUNTUNA", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:FUNTUNA", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:BXEXEC-OPENTUNA", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:BXEXEC-OPENTUNA", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:FMCBD-1.953", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:FMCBD-1.953", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:FMCBD-1.966", mcport); // This one is repeated (LDR_FMCBD-1.966 vs FMCBD-1.966) - seems okay.
+snprintf(temp_path, MAX_PATH, "mc%u:FMCBD-1.966", mcport); // This one is repeated (LDR_FMCBD-1.966 vs FMCBD-1.966) - seems okay.
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:OPENTUNA", mcport); // Repeated
+snprintf(temp_path, MAX_PATH, "mc%u:OPENTUNA", mcport); // Repeated
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:OSDMENU", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:OSDMENU", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:POPSTARTER", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:POPSTARTER", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:POWEROFF", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:POWEROFF", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
-sprintf(temp_path, "mc%u:PS1_DKWDRV", mcport);
+snprintf(temp_path, MAX_PATH, "mc%u:PS1_DKWDRV", mcport);
 		if (DeleteFolder(temp_path) != 0) { PRINTF("Install: Failed to delete folder %s\n", temp_path); return 7; }
     
 	//If the files exists, we have an error:
@@ -1087,8 +1087,16 @@ void error_message(int iz)
 	// This means iz=5,7,8 currently won't show a specific message here beyond the generic 'error' BMP.
 	default:
 		// No specific message for this error code, generic error BMP is already shown.
+		// We will print the numerical code below.
 		break;
 	}
+
+	// Display the numerical error code
+	char err_code_str[32];
+	sprintf(err_code_str, "Error Code: %d", iz);
+	// Y chosen to be below the typical MensajeX bitmaps.
+	// X chosen to be roughly centered for "Error Code: XX" (approx 14 chars, 8px/char ~112px; (640-112)/2 = 264)
+	gs_font_print(264, 390, 1, 0x00E0E0E0, err_code_str);
 }
 
 // Waits for a specific controller key press (or any key if 'key' is -1).
