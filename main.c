@@ -394,7 +394,7 @@ static void InitPS2(void)
 	SifExecModuleBuffer(MCSERV_irx, size_MCSERV_irx, 0, NULL, NULL);  // Memory card server (high-level)
     sbv_patch_fileio(); // Apply file I/O patches (e.g., for wider compatibility). THANKS fjtrujy
 
-	mcInit(MC_TYPE_XMC); // Initialize memory card driver. MC_TYPE_XMC for eXtended MC driver.
+	mcInit(MC_TYPE_MC); // Initialize memory card driver with standard type (MC_TYPE_MC) for potentially broader compatibility.
 	PadInitPads(); // Initialize the pad (controller) input system.
 }
 
